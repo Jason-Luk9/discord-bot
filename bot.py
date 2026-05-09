@@ -65,7 +65,7 @@ async def news(
     await interaction.response.defer()
     
     lang_code = language.value if language else "en"
-    url = f"https://newsdata.io/api/1/news?apikey={NEWSDATA_TOKEN}&q={coin.lower()}&language={lang_code}"
+    url = f"https://newsdata.io/api/1/news?apikey={NEWSDATA_TOKEN}&q={coin.lower()}%20crypto&language={lang_code}"
     
     if country:
         url += f"&country={country.lower()}"

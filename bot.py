@@ -4,6 +4,7 @@ from discord import app_commands
 import requests
 import os
 from dotenv import load_dotenv
+from keep_alive import keep_alive
 
 load_dotenv()
 DISCORD_TOKEN = os.getenv('DISCORD_TOKEN')
@@ -109,5 +110,7 @@ async def news(
     # Send the combined message!
     # Discord has a 2000 character limit per message, so keeping it to 5 articles is safe.
     await interaction.followup.send(final_message)
+
+keep_alive()
 
 bot.run(DISCORD_TOKEN)
